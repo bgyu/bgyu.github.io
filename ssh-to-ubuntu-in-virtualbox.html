@@ -2,7 +2,7 @@
 <html lang="english">
 <head>
 
-        <title>Ben's Blog</title>
+        <title>How to ssh to Ubuntu in VirtualBox</title>
         <meta charset="utf-8" />
 
 
@@ -41,43 +41,49 @@
               </ul>
             </div>
 
-<section id="content">
-
-
+<section id="content" class="body">
 
    <div class="row">
-
-
         <div class="eleven columns">
-                 <ol id="post-list">
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="./ssh-to-ubuntu-in-virtualbox.html" rel="bookmark" title="Permalink to How to ssh to Ubuntu in VirtualBox">How to ssh to Ubuntu in VirtualBox</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2021-06-26T20:45:00+10:00"> Sat 26 June 2021 </abbr>
-                                    <address class="vcard author">By 
-                                    <a class="url fn" href="./author/ben.html"> Ben</a>
-                                    </address>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <p>This article shows you how to install ssh in Ubuntu, simple configure and ssh it in your host OS</p> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="./ssh-to-ubuntu-in-virtualbox.html" rel="bookmark" title="Permalink to How to ssh to Ubuntu in VirtualBox">Read more <i class="icon-arrow-right"></i></a></div>
 
 
+            <header>
+              <h2 class="entry-title">
+                <a href="./ssh-to-ubuntu-in-virtualbox.html" rel="bookmark"
+                   title="Permalink to How to ssh to Ubuntu in VirtualBox">How to ssh to Ubuntu in VirtualBox</a></h2>
+           
+            </header>
+            <footer class="post-info">
+              <abbr class="published" title="2021-06-26T20:45:00+10:00">
+                Sat 26 June 2021
+              </abbr>
+              <address class="vcard author">By 
+                <a class="url fn" href="./author/ben.html"> Ben</a>
+              </address>
+            </footer><!-- /.post-info -->
+            <div class="entry-content">
+              <p>Assuming that you are using Ubuntu guest in your VirtualBox, and you are using NAT as the network mode.</p>
+<p>Step 1, install and configure openssh-server:  </p>
+<div class="highlight"><pre><span></span><code>sudo apt install openssh-server
+</code></pre></div>
 
-                                <div class="row tag-row">
-                                        <span>Tagged as : </span>
-                                            <a class="danger label" href="./tag/linux.html">linux</a>
-                                            <a class="danger label" href="./tag/ssh.html">ssh</a>
-                                            <a class="danger label" href="./tag/virtualbox.html">virtualbox</a>
-                                </div>
+<p>Step 2, setup port fowarding in VirtualBox
+In VirtualBox, right click your Virtual Machine (eg. Ubuntu), go to <code>Network</code> -&gt; <code>Advanced</code> -&gt; <code>Port forwarding</code>, add a new entry like below:</p>
+<table>
+<tr><th>Name</th><th>Protocol</th><th>Host IP</th><th>Host Port</th><th>Guest IP</th><th>Guest Port</th></tr>
+<tr><td>SSH</td><td>TCP</td><td></td><td>2222</td><td></td><td>22</td></tr>
+</table>
 
+<p><img alt="SSH Port Forwarding" src="./images/ssh-port-fowarding.png"></p>
+<p>Step 3, SSH to Ubuntu in your Host OS  </p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Change &lt;username&gt; to your Ubuntu login name, and input password when it prompts</span>
+ssh -l &lt;username&gt; <span class="m">127</span>.0.0.1 -p <span class="m">2222</span> 
+</code></pre></div>
+            </div><!-- /.entry-content -->
 
-
-                        </article></li>
-                </ol><!-- /#posts-list -->
 
         </div><!-- /.eleven.columns -->
-        
+
 <div class="three columns">
 
   <h4>Pages</h4>
@@ -99,10 +105,8 @@
 
 </div> </div><!-- /.row -->
 
-<p class="paginator">
-    Page 1 / 1
-</p>
-</section><!-- /#content -->
+
+</section>
 
        </div><!-- /.row -->
     </div><!-- /.container -->

@@ -1,0 +1,27 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Ben&#x27;s Blog",
+    "description": "",
+    "home_page_url": "file:///C:\Users\ben\Documents\Publii\sites\bens-blog\preview",
+    "feed_url": "file:///C:\Users\ben\Documents\Publii\sites\bens-blog\preview/feed.json",
+    "user_comment": "",
+    "author": {
+        "name": "Ben"
+    },
+    "items": [
+        {
+            "id": "file:///C:\Users\ben\Documents\Publii\sites\bens-blog\preview/how-to-ssh-to-ubuntu-in-virtualbox.html",
+            "url": "file:///C:\Users\ben\Documents\Publii\sites\bens-blog\preview/how-to-ssh-to-ubuntu-in-virtualbox.html",
+            "title": "How to SSH to Ubuntu in VirtualBox",
+            "summary": "Assuming that you are using Ubuntu guest in your VirtualBox, and you are using NAT as the network mode. Step 1, install and configure openssh-server: sudo apt install openssh-server Step 2, setup port fowarding in VirtualBox In VirtualBox Right click your Virtual Machine (eg. Ubuntu),&hellip;",
+            "content_html": "<p>Assuming that you are using Ubuntu guest in your VirtualBox, and you are using NAT as the network mode.</p>\n<p><strong>Step 1, install and configure openssh-server:</strong></p>\n<div class=\"highlight\">\n<pre><code>sudo apt install openssh-server\n</code></pre>\n</div>\n<p><strong>Step 2, setup port fowarding in VirtualBox In VirtualBox</strong></p>\n<p>Right click your Virtual Machine (eg. Ubuntu), go to <code>Network</code> -&gt; <code>Advanced</code> -&gt; <code>Port forwarding</code>, add a new entry like below:</p>\n<table style=\"border-collapse: collapse; width: 109.484%; height: 61px;\" border=\"1\">\n<tbody>\n<tr style=\"height: 51px;\">\n<td style=\"width: 16.6667%; height: 51px;\"><span style=\"color: #2dc26b;\"><strong>Name</strong></span></td>\n<td style=\"width: 16.6667%; height: 51px;\"><span style=\"color: #2dc26b;\"><strong>Protocol</strong></span></td>\n<td style=\"width: 16.6667%; height: 51px;\"><span style=\"color: #2dc26b;\"><strong>Host IP</strong></span></td>\n<td style=\"width: 16.6667%; height: 51px;\"><span style=\"color: #2dc26b;\"><strong>Host Port</strong></span></td>\n<td style=\"width: 16.6667%; height: 51px;\"><span style=\"color: #2dc26b;\"><strong>Guest IP</strong></span></td>\n<td style=\"width: 20.9164%; height: 51px;\"><span style=\"color: #2dc26b;\"><strong>Guest Port</strong></span></td>\n</tr>\n<tr style=\"height: 10px;\">\n<td style=\"width: 16.6667%; height: 10px;\">SSH</td>\n<td style=\"width: 16.6667%; height: 10px;\">TCP</td>\n<td style=\"width: 16.6667%; height: 10px;\"> </td>\n<td style=\"width: 16.6667%; height: 10px;\">2222</td>\n<td style=\"width: 16.6667%; height: 10px;\"> </td>\n<td style=\"width: 20.9164%; height: 10px;\">22</td>\n</tr>\n</tbody>\n</table>\n<figure class=\"post__image post__image--center\"><img loading=\"lazy\"  src=\"file:///C:/Users/ben/Documents/Publii/sites/bens-blog/preview/media/posts/1/ssh-port-fowarding.png\" sizes=\"(max-width: 48em) 100vw, 768px\" srcset=\"file:///C:/Users/ben/Documents/Publii/sites/bens-blog/preview/media/posts/1/responsive/ssh-port-fowarding-xs.png 300w ,file:///C:/Users/ben/Documents/Publii/sites/bens-blog/preview/media/posts/1/responsive/ssh-port-fowarding-sm.png 480w ,file:///C:/Users/ben/Documents/Publii/sites/bens-blog/preview/media/posts/1/responsive/ssh-port-fowarding-md.png 768w ,file:///C:/Users/ben/Documents/Publii/sites/bens-blog/preview/media/posts/1/responsive/ssh-port-fowarding-lg.png 1024w ,file:///C:/Users/ben/Documents/Publii/sites/bens-blog/preview/media/posts/1/responsive/ssh-port-fowarding-xl.png 1360w ,file:///C:/Users/ben/Documents/Publii/sites/bens-blog/preview/media/posts/1/responsive/ssh-port-fowarding-2xl.png 1600w\"  alt=\"NATPortForward\" width=\"780\" height=\"350\"></figure>\n<p><strong>Step 3, SSH to Ubuntu in your Host OS</strong></p>\n<div class=\"highlight\">\n<pre><code><span class=\"c1\"># Change &lt;username&gt; to your Ubuntu login name, and input password when it prompts</span>\nssh -l &lt;username&gt; <span class=\"m\">127</span>.0.0.1 -p <span class=\"m\">2222</span> \n</code></pre>\n</div>",
+            "author": {
+                "name": "Ben"
+            },
+            "tags": [
+            ],
+            "date_published": "2021-06-26T22:39:08+10:00",
+            "date_modified": "2021-06-26T22:39:08+10:00"
+        }
+    ]
+}

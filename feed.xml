@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Ben&#x27;s Blog</title>
+    <link href="file:///C:\Users\ben\Documents\Publii\sites\bens-blog\preview/feed.xml" rel="self" />
+    <link href="file:///C:\Users\ben\Documents\Publii\sites\bens-blog\preview" />
+    <updated>2021-06-26T22:39:08+10:00</updated>
+    <author>
+        <name>Ben</name>
+    </author>
+    <id>file:///C:\Users\ben\Documents\Publii\sites\bens-blog\preview</id>
+
+    <entry>
+        <title>How to SSH to Ubuntu in VirtualBox</title>
+        <author>
+            <name>Ben</name>
+        </author>
+        <link href="file:///C:\Users\ben\Documents\Publii\sites\bens-blog\preview/how-to-ssh-to-ubuntu-in-virtualbox.html"/>
+        <id>file:///C:\Users\ben\Documents\Publii\sites\bens-blog\preview/how-to-ssh-to-ubuntu-in-virtualbox.html</id>
+
+        <updated>2021-06-26T22:39:08+10:00</updated>
+            <summary>
+                <![CDATA[
+                    Assuming that you are using Ubuntu guest in your VirtualBox, and you are using NAT as the network mode. Step 1, install and configure openssh-server: sudo apt install openssh-server Step 2, setup port fowarding in VirtualBox In VirtualBox Right click your Virtual Machine (eg. Ubuntu),&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>Assuming that you are using Ubuntu guest in your VirtualBox, and you are using NAT as the network mode.</p>
+<p><strong>Step 1, install and configure openssh-server:</strong></p>
+<div class="highlight">
+<pre><code>sudo apt install openssh-server
+</code></pre>
+</div>
+<p><strong>Step 2, setup port fowarding in VirtualBox In VirtualBox</strong></p>
+<p>Right click your Virtual Machine (eg. Ubuntu), go to <code>Network</code> -&gt; <code>Advanced</code> -&gt; <code>Port forwarding</code>, add a new entry like below:</p>
+<table style="border-collapse: collapse; width: 109.484%; height: 61px;" border="1">
+<tbody>
+<tr style="height: 51px;">
+<td style="width: 16.6667%; height: 51px;"><span style="color: #2dc26b;"><strong>Name</strong></span></td>
+<td style="width: 16.6667%; height: 51px;"><span style="color: #2dc26b;"><strong>Protocol</strong></span></td>
+<td style="width: 16.6667%; height: 51px;"><span style="color: #2dc26b;"><strong>Host IP</strong></span></td>
+<td style="width: 16.6667%; height: 51px;"><span style="color: #2dc26b;"><strong>Host Port</strong></span></td>
+<td style="width: 16.6667%; height: 51px;"><span style="color: #2dc26b;"><strong>Guest IP</strong></span></td>
+<td style="width: 20.9164%; height: 51px;"><span style="color: #2dc26b;"><strong>Guest Port</strong></span></td>
+</tr>
+<tr style="height: 10px;">
+<td style="width: 16.6667%; height: 10px;">SSH</td>
+<td style="width: 16.6667%; height: 10px;">TCP</td>
+<td style="width: 16.6667%; height: 10px;"> </td>
+<td style="width: 16.6667%; height: 10px;">2222</td>
+<td style="width: 16.6667%; height: 10px;"> </td>
+<td style="width: 20.9164%; height: 10px;">22</td>
+</tr>
+</tbody>
+</table>
+<figure class="post__image post__image--center"><img loading="lazy"  src="file:///C:/Users/ben/Documents/Publii/sites/bens-blog/preview/media/posts/1/ssh-port-fowarding.png" sizes="(max-width: 48em) 100vw, 768px" srcset="file:///C:/Users/ben/Documents/Publii/sites/bens-blog/preview/media/posts/1/responsive/ssh-port-fowarding-xs.png 300w ,file:///C:/Users/ben/Documents/Publii/sites/bens-blog/preview/media/posts/1/responsive/ssh-port-fowarding-sm.png 480w ,file:///C:/Users/ben/Documents/Publii/sites/bens-blog/preview/media/posts/1/responsive/ssh-port-fowarding-md.png 768w ,file:///C:/Users/ben/Documents/Publii/sites/bens-blog/preview/media/posts/1/responsive/ssh-port-fowarding-lg.png 1024w ,file:///C:/Users/ben/Documents/Publii/sites/bens-blog/preview/media/posts/1/responsive/ssh-port-fowarding-xl.png 1360w ,file:///C:/Users/ben/Documents/Publii/sites/bens-blog/preview/media/posts/1/responsive/ssh-port-fowarding-2xl.png 1600w"  alt="NATPortForward" width="780" height="350"></figure>
+<p><strong>Step 3, SSH to Ubuntu in your Host OS</strong></p>
+<div class="highlight">
+<pre><code><span class="c1"># Change &lt;username&gt; to your Ubuntu login name, and input password when it prompts</span>
+ssh -l &lt;username&gt; <span class="m">127</span>.0.0.1 -p <span class="m">2222</span> 
+</code></pre>
+</div>
+            ]]>
+        </content>
+    </entry>
+</feed>

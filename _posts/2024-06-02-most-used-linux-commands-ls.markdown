@@ -1,3 +1,10 @@
+---
+layout: post
+title:  "Most used Linux command: ls"
+date:   2024-06-02 22:12:00 +1000
+categories: linux
+---
+
 ## ls
 
 The `ls` command in Linux is used to list the contents of a directory. It has various options that can modify its output to show more detailed information, hidden files, sorted lists, and more. Here are several examples demonstrating different usages of the `ls` command:

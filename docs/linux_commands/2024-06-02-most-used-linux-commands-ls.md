@@ -1,6 +1,7 @@
 ---
-layout: post
+layout:  default
 title:  "Most used Linux command: ls"
+parent: Linux Commands
 date:   2024-06-02 22:12:00 +1000
 categories: linux
 ---

@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: default
 title: About
-permalink: /about/
+nav_order: 99
 ---
 
 This github pages website is used for my learning journals (regarding IT).

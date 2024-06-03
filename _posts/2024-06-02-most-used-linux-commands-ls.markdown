@@ -5,7 +5,10 @@ date:   2024-06-02 22:12:00 +1000
 categories: linux
 ---
 
-## ls
+## ls : list directory contents
+
+### Command
+`ls [OPTION]... [FILE]...`
 
 The `ls` command in Linux is used to list the contents of a directory. It has various options that can modify its output to show more detailed information, hidden files, sorted lists, and more. Here are several examples demonstrating different usages of the `ls` command:
 
@@ -117,6 +120,15 @@ The `ls` command in Linux is used to list the contents of a directory. It has va
     -rw-r--r-- 1 user user 1.1K Jun  1 12:04 file4.txt
     ```
 
+13. **List Only Directories**
+```sh
+ls -lF | grep /$
+
+# or 
+ls -l | grep ^d
+```
+
+
 ### Summary of Options
 
 - **`-a`**: Show all files, including hidden files.
@@ -124,6 +136,7 @@ The `ls` command in Linux is used to list the contents of a directory. It has va
 - **`-h`**: Human-readable sizes.
 - **`-t`**: Sort by modification time.
 - **`-R`**: Recursive listing.
+- **`-F`**: Append indicator to entries, if it's a directory, `/` will be appended
 
 By using these options and combining them as needed, you can customize the output of the `ls` command to meet your specific requirements.
 

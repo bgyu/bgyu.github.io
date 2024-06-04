@@ -122,12 +122,10 @@ The `ls` command in Linux is used to list the contents of a directory. It has va
     ```
 
 13. **List Only Directories**
-```sh
-ls -lF | grep /$
-
-# or 
-ls -l | grep ^d
-```
+    ```sh
+    ls -lF | grep /$
+    ls -l | grep ^d
+    ```
 
 
 ### Summary of Options
